@@ -1,4 +1,4 @@
-# 🛒 SelfStore – Distributed E-commerce Backend with GenAI Integration
+# 🛒 SelfStore – Distributed E-commerce Backend with GenAI Integration | Backend
 
 [![Java](https://img.shields.io/badge/Java-17-blue?logo=java)](https://www.oracle.com/java/)
 [![Spring Boot](https://img.shields.io/badge/SpringBoot-3.x-brightgreen?logo=spring)](https://spring.io/projects/spring-boot)
@@ -40,6 +40,10 @@
 - All actions monitored using **LangSmith**.
 
 ---
+## Snips
+![image](https://github.com/user-attachments/assets/1acef969-e2fb-44b7-8f7c-77c33e9874e7)
+![image](https://github.com/user-attachments/assets/fd92204e-8232-4645-906b-9b6aeb9f4268)
+![image](https://github.com/user-attachments/assets/3d3ca512-2e86-40bc-9685-06017e681dd1)
 
 ## ⚙️ Key Features
 
