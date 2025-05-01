@@ -12,7 +12,7 @@ Architecture Diagram:
 ![diagram-export-4-30-2025-12_17_50-AM](https://github.com/user-attachments/assets/193b8e34-3c1a-4f3d-b6df-3e463d2abfcd)
 
 Summary:
-🚀 Built a distributed Amazon-style E-commerce backend using Java, Spring Boot, Python, GenAI, and MSSQL, architected for scale, performance, and reliability.
+🚀 Built a distributed Amazon-style E-commerce backend using Java, Spring Boot, Python, GenAI, and MSSQL, architected for scale, performance, and reliability.\n
 -> Designed and implemented 6+ specialized microservices including Product, User (Auth), Payment (Stripe/Razorpay), API Gateway, Intelligence (LLM), and Service Discovery.
 -> Developed a GenAI-powered Intelligence Service using Groq LLM Agents, following Claude’s MCP Protocol to host an MCP server. CRUD operations enabled via natural language using tool integration ,ReAct model and RAG (Retrieval-Augmented Generation) to minimize hallucinations and increased accuracy.
 -> Fortified system security with Spring Security, OAuth 2.0, JWT authentication, and encrypted password management via BCrypt.
