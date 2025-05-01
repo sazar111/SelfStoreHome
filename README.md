@@ -80,10 +80,3 @@
 `Java · Spring Boot · Python · Redis · MSSQL · OAuth · JWT · Claude MCP · GenAI · LangChain · LangSmith · RAG · Flyway · Microservices · API Gateway · Eureka · Adapter Pattern · Low-Level Design · System Design`
 
 ---
-
-
-Let me know if you'd like to include:
-
-- Deployment instructions (Docker, CI/CD)
-- Environment setup scripts
-- API documentation (Swagger/OpenAPI)
