@@ -1,27 +1,89 @@
-![diagram-export-4-30-2025-12_17_50-AM](https://github.com/user-attachments/assets/ec0a4a10-30ac-4dc9-84e1-52ef7ffe2d94)# SelfStoreHome
-ReadMe for SelfStore
-Different Services:
--Product Service: https://github.com/sazar111/ProductService
--User Service: https://github.com/sazar111/SelfStore-UserService
--Payment Service: https://github.com/sazar111/SelfStore-PaymentService
--Service Discovery: https://github.com/sazar111/SelfStore-ServiceDiscovery
--Api Gateway: https://github.com/sazar111/SelfStore-ApiGateway
--Intelligence Service:
+# 🛒 SelfStore – Distributed E-commerce Backend with GenAI Integration
 
-Architecture Diagram:
-![diagram-export-4-30-2025-12_17_50-AM](https://github.com/user-attachments/assets/193b8e34-3c1a-4f3d-b6df-3e463d2abfcd)
+[![Java](https://img.shields.io/badge/Java-17-blue?logo=java)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/SpringBoot-3.x-brightgreen?logo=spring)](https://spring.io/projects/spring-boot)
+[![Python](https://img.shields.io/badge/Python-3.10-yellow?logo=python)](https://www.python.org/)
+[![Redis](https://img.shields.io/badge/Redis-Cache-red?logo=redis)](https://redis.io/)
+[![MSSQL](https://img.shields.io/badge/Database-MSSQL-informational?logo=microsoftsqlserver)](https://www.microsoft.com/en-us/sql-server)
+[![LangChain](https://img.shields.io/badge/LangChain-GenAI-orange?logo=python)](https://www.langchain.com/)
 
-Summary:
-🚀 Built a distributed Amazon-style E-commerce backend using Java, Spring Boot, Python, GenAI, and MSSQL, architected for scale, performance, and reliability.\n
--> Designed and implemented 6+ specialized microservices including Product, User (Auth), Payment (Stripe/Razorpay), API Gateway, Intelligence (LLM), and Service Discovery.
--> Developed a GenAI-powered Intelligence Service using Groq LLM Agents, following Claude’s MCP Protocol to host an MCP server. CRUD operations enabled via natural language using tool integration ,ReAct model and RAG (Retrieval-Augmented Generation) to minimize hallucinations and increased accuracy.
--> Fortified system security with Spring Security, OAuth 2.0, JWT authentication, and encrypted password management via BCrypt.
--> Boosted Product Service API performance from 2s to 900ms using Redis Cloud caching, further optimized to 10ms with local Redis caching and seamless Fakestore API integration via the Adapter pattern.
--> Engineered real-time payment flows by integrating Stripe and Razorpay, dynamically generating payment URLs and instantly updating transaction statuses.
--> Connected microservices through Eureka and Spring Cloud, enabling dynamic service discovery, load balancing, and health monitoring.
--> Streamlined database migrations and management with Flyway, leveraging centralized MSSQL storage across the platform.
--> Launched a RAG-based agent backed by ChromaDB, reducing vector search response times from 4s to 900ms, powering smart Q&A and dynamic system explanations via an interactive UI.
--> Applied clean architecture principles, scalable RESTful API design, and modular design patterns to ensure maximum maintainability, performance, and growth readiness.
-Tools: Java, Spring Boot, Spring Security, OAuth 2.0, JWT, BCrypt, Python, Groq LLM, Claude MCP Protocol, Redis (Cloud & Local), ChromaDB, Stripe, Razorpay, Eureka, Spring Cloud, Flyway, MSSQL, Fakestore API.
-🚀 Built a distributed Amazon-style E-commerce backend using Java, Spring Boot, Python, GenAI, and MSSQL, architected for scale, performance, and reliability. -> Designed and implemented 6+ specialized microservices including Product, User (Auth), Payment (Stripe/Razorpay), API Gateway, Intelligence (LLM), and Service Discovery. -> Developed a GenAI-powered Intelligence Service using Groq LLM Agents, following Claude’s MCP Protocol to host an MCP server. CRUD operations enabled via natural language using tool integration ,ReAct model and RAG (Retrieval-Augmented Generation) to minimize hallucinations and increased accuracy. -> Fortified system security with Spring Security, OAuth 2.0, JWT authentication, and encrypted password management via BCrypt. -> Boosted Product Service API performance from 2s to 900ms using Redis Cloud caching, further optimized to 10ms with local Redis caching and seamless Fakestore API integration via the Adapter pattern. -> Engineered real-time payment flows by integrating Stripe and Razorpay, dynamically generating payment URLs and instantly updating transaction statuses. -> Connected microservices through Eureka and Spring Cloud, enabling dynamic service discovery, load balancing, and health monitoring. -> Streamlined database migrations and management with Flyway, leveraging centralized MSSQL storage across the platform. -> Launched a RAG-based agent backed by ChromaDB, reducing vector search response times from 4s to 900ms, powering smart Q&A and dynamic system explanations via an interactive UI. -> Applied clean architecture principles, scalable RESTful API design, and modular design patterns to ensure maximum maintainability, performance, and growth readiness. Tools: Java, Spring Boot, Spring Security, OAuth 2.0, JWT, BCrypt, Python, Groq LLM, Claude MCP Protocol, Redis (Cloud & Local), ChromaDB, Stripe, Razorpay, Eureka, Spring Cloud, Flyway, MSSQL, Fakestore API.
-Skills: Java · Spring Framework · Generative AI · Model Context Protocol · Redis · Flyway · Vector Databases · Databases · MySQL · OAuth · bcrypt · Low-Level Design
+**SelfStore** is a scalable, Amazon-style e-commerce backend system built with microservices using Java, Spring Boot, Python, and Groq LLMs. It features intelligent automation using Claude’s MCP Protocol, natural language-driven product operations, and real-time payment systems.
+
+---
+
+## 📌 Architecture Diagram
+
+![SelfStore Architecture](https://github.com/user-attachments/assets/193b8e34-3c1a-4f3d-b6df-3e463d2abfcd)
+
+---
+
+## 🔗 Microservices Repositories
+
+| Service             | Description                                | Repository Link                                                                 |
+|---------------------|--------------------------------------------|----------------------------------------------------------------------------------|
+| **Product Service**     | Product APIs, Redis caching, Fakestore Adapter | [Product Service](https://github.com/sazar111/ProductService)                   |
+| **User Service**        | Authentication, JWT, OAuth, BCrypt         | [User Service](https://github.com/sazar111/SelfStore-UserService)              |
+| **Payment Service**     | Stripe & Razorpay payment integrations     | [Payment Service](https://github.com/sazar111/SelfStore-PaymentService)         |
+| **Service Discovery**   | Eureka server for service registration     | [Service Discovery](https://github.com/sazar111/SelfStore-ServiceDiscovery)      |
+| **API Gateway**         | Request routing and load balancing         | [API Gateway](https://github.com/sazar111/SelfStore-ApiGateway)                 |
+| **Intelligence Service**| GenAI + MCP server with LLM + RAG         |                                                                |
+
+---
+
+## 🧠 Intelligence Service (GenAI-Powered)
+
+- Built using **Python**, **LangChain**, and **Groq LLM**.
+- Hosts a Claude **MCP Protocol server**, enabling natural language CRUD on `ProductService` using registered **tools**.
+- External **MCP Agent** queries the service and invokes the appropriate tool based on user intent (using **ReAct model**).
+- Includes a separate **RAG-based Agent** with access to the codebase for developer Q&A and system explanation.
+- Vector storage with **ChromaDB**.
+- All actions monitored using **LangSmith**.
+
+---
+
+## ⚙️ Key Features
+
+- 🚀 **Microservice Architecture** with Spring Boot and Python services.
+- 🔁 **Service Discovery** using Eureka and Spring Cloud for registration and load balancing.
+- 🛡️ **Security**:
+  - Spring Security with OAuth 2.0 and JWT
+  - Encrypted password storage with BCrypt
+- 💳 **Payment Gateway**:
+  - Dynamic URL generation via Stripe and Razorpay
+  - Real-time transaction update integration
+- ⚡ **Performance Optimizations**:
+  - Redis Cloud and local Redis for Product caching (2s → 10ms)
+  - Vector search via ChromaDB (4s → 900ms)
+- 🧼 **Clean Architecture**:
+  - DTOs, Adapter pattern, RESTful APIs
+  - Modular, scalable, and maintainable design
+- 🔄 **Database Migrations**:
+  - Managed via **Flyway**
+  - Centralized **MSSQL** database
+
+---
+
+## 🧰 Tech Stack
+
+- **Languages**: Java 17, Python 3.10
+- **Frameworks**: Spring Boot, Spring Security, Spring Cloud, LangChain
+- **AI**: Claude LLM, Groq, ReAct, RAG, LangSmith, MCP Protocol
+- **Storage**: MSSQL, Redis (Local & Cloud), ChromaDB
+- **Security**: OAuth 2.0, JWT, BCrypt
+- **Payments**: Stripe, Razorpay
+- **DevOps**: Flyway, Eureka, API Gateway
+
+---
+
+## 🧑‍💻 Skills Demonstrated
+
+`Java · Spring Boot · Python · Redis · MSSQL · OAuth · JWT · Claude MCP · GenAI · LangChain · LangSmith · RAG · Flyway · Microservices · API Gateway · Eureka · Adapter Pattern · Low-Level Design · System Design`
+
+---
+
+
+Let me know if you'd like to include:
+
+- Deployment instructions (Docker, CI/CD)
+- Environment setup scripts
+- API documentation (Swagger/OpenAPI)
