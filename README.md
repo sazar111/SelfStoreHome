@@ -7,7 +7,7 @@
 [![MSSQL](https://img.shields.io/badge/Database-MSSQL-informational?logo=microsoftsqlserver)](https://www.microsoft.com/en-us/sql-server)
 [![LangChain](https://img.shields.io/badge/LangChain-GenAI-orange?logo=python)](https://www.langchain.com/)
 
-**SelfStore** is a scalable, Amazon-style e-commerce backend system built with microservices using Java, Spring Boot, Python, and Groq LLMs. It features intelligent automation using Claude’s MCP Protocol, natural language-driven product operations, and real-time payment systems.
+**SelfStore** is a scalable, Amazon-style e-commerce backend system built using microservices with Java, Spring Boot, Python, and Groq LLMs. It integrates intelligent automation via Claude’s MCP Protocol, allowing natural language-driven product operations and real-time payment handling.
 
 ---
 
@@ -19,68 +19,73 @@
 
 ## 🔗 Microservices Repositories
 
-| Service             | Description                                | Repository Link                                                                 |
-|---------------------|--------------------------------------------|----------------------------------------------------------------------------------|
-| **Product Service**     | Product APIs, Redis caching, Fakestore Adapter | [Product Service](https://github.com/sazar111/ProductService)                   |
-| **User Service**        | Authentication, JWT, OAuth, BCrypt         | [User Service](https://github.com/sazar111/SelfStore-UserService)              |
-| **Payment Service**     | Stripe & Razorpay payment integrations     | [Payment Service](https://github.com/sazar111/SelfStore-PaymentService)         |
-| **Service Discovery**   | Eureka server for service registration     | [Service Discovery](https://github.com/sazar111/SelfStore-ServiceDiscovery)      |
-| **API Gateway**         | Request routing and load balancing         | [API Gateway](https://github.com/sazar111/SelfStore-ApiGateway)                 |
-| **Intelligence Service**| GenAI + MCP server with LLM + RAG         |                                                                |
+| Service               | Description                                | Repository Link                                                                   |
+|------------------------|--------------------------------------------|------------------------------------------------------------------------------------|
+| **Product Service**     | Product APIs, Redis caching, Fakestore Adapter | [Product Service](https://github.com/sazar111/ProductService)                     |
+| **User Service**        | Authentication, JWT, OAuth 2.0, BCrypt      | [User Service](https://github.com/sazar111/SelfStore-UserService)                |
+| **Payment Service**     | Stripe & Razorpay integration               | [Payment Service](https://github.com/sazar111/SelfStore-PaymentService)           |
+| **Service Discovery**   | Eureka for service registry                 | [Service Discovery](https://github.com/sazar111/SelfStore-ServiceDiscovery)        |
+| **API Gateway**         | Centralized routing and load balancing     | [API Gateway](https://github.com/sazar111/SelfStore-ApiGateway)                   |
+| **Intelligence Service**| GenAI + MCP Server + RAG                   |                                                                       |
 
 ---
 
 ## 🧠 Intelligence Service (GenAI-Powered)
 
-- Built using **Python**, **LangChain**, and **Groq LLM**.
-- Hosts a Claude **MCP Protocol server**, enabling natural language CRUD on `ProductService` using registered **tools**.
-- External **MCP Agent** queries the service and invokes the appropriate tool based on user intent (using **ReAct model**).
-- Includes a separate **RAG-based Agent** with access to the codebase for developer Q&A and system explanation.
-- Vector storage with **ChromaDB**.
-- All actions monitored using **LangSmith**.
+- Built with **Python**, **LangChain**, and **Groq LLMs**.
+- Hosts a Claude **MCP Protocol server** enabling **natural language-based CRUD** for `ProductService` using LangChain tools.
+- Uses **ReAct** for reasoning and tool selection.
+- Includes a **RAG-based Agent** that provides code explanations and smart answers to developer queries.
+- Vector database powered by **ChromaDB**.
+- Observability and debugging handled via **LangSmith**.
 
 ---
-## Snips
-![image](https://github.com/user-attachments/assets/1acef969-e2fb-44b7-8f7c-77c33e9874e7)
-![image](https://github.com/user-attachments/assets/fd92204e-8232-4645-906b-9b6aeb9f4268)
-![image](https://github.com/user-attachments/assets/3d3ca512-2e86-40bc-9685-06017e681dd1)
+
+## 📸 Feature Snippets
+
+| Screenshot | Description |
+|-----------|-------------|
+| ![RAG UI](https://github.com/user-attachments/assets/1acef969-e2fb-44b7-8f7c-77c33e9874e7) | 🔍 RAG Agent answering how the system works |
+| ![MCP Agent](https://github.com/user-attachments/assets/fd92204e-8232-4645-906b-9b6aeb9f4268) | 🛠️ Creating a product via natural language with MCP Agent |
+| ![Payment](https://github.com/user-attachments/assets/3d3ca512-2e86-40bc-9685-06017e681dd1) | 💳 Stripe-based real-time payment flow |
+
+---
 
 ## ⚙️ Key Features
 
-- 🚀 **Microservice Architecture** with Spring Boot and Python services.
-- 🔁 **Service Discovery** using Eureka and Spring Cloud for registration and load balancing.
+- 🚀 **Modular Microservices** with Spring Boot and Python
+- 🔁 **Service Discovery** via Eureka and Spring Cloud
 - 🛡️ **Security**:
-  - Spring Security with OAuth 2.0 and JWT
-  - Encrypted password storage with BCrypt
-- 💳 **Payment Gateway**:
-  - Dynamic URL generation via Stripe and Razorpay
-  - Real-time transaction update integration
-- ⚡ **Performance Optimizations**:
-  - Redis Cloud and local Redis for Product caching (2s → 10ms)
-  - Vector search via ChromaDB (4s → 900ms)
+  - OAuth 2.0, JWT-based authentication
+  - BCrypt encrypted passwords
+- 💳 **Payment Systems**:
+  - Stripe & Razorpay integration
+  - Dynamic URLs and real-time payment updates
+- ⚡ **Optimized Performance**:
+  - Redis Cloud + local Redis caching (2s → 10ms)
+  - RAG vector search with ChromaDB (4s → 900ms)
 - 🧼 **Clean Architecture**:
-  - DTOs, Adapter pattern, RESTful APIs
-  - Modular, scalable, and maintainable design
-- 🔄 **Database Migrations**:
-  - Managed via **Flyway**
-  - Centralized **MSSQL** database
+  - DTOs, Adapter Pattern, RESTful APIs
+- 🔄 **Database Migrations** with Flyway
+- 🧠 **Intelligence Layer** using GenAI, MCP, ReAct, and RAG
 
 ---
 
 ## 🧰 Tech Stack
 
-- **Languages**: Java 17, Python 3.10
-- **Frameworks**: Spring Boot, Spring Security, Spring Cloud, LangChain
-- **AI**: Claude LLM, Groq, ReAct, RAG, LangSmith, MCP Protocol
-- **Storage**: MSSQL, Redis (Local & Cloud), ChromaDB
-- **Security**: OAuth 2.0, JWT, BCrypt
-- **Payments**: Stripe, Razorpay
-- **DevOps**: Flyway, Eureka, API Gateway
+- **Languages**: Java 17, Python 3.10  
+- **Frameworks**: Spring Boot, Spring Security, Spring Cloud, LangChain  
+- **AI/LLM**: Claude, Groq, MCP Protocol, RAG, LangSmith  
+- **Storage**: MSSQL, Redis (local/cloud), ChromaDB  
+- **Auth & Security**: OAuth 2.0, JWT, BCrypt  
+- **Payments**: Stripe, Razorpay  
+- **DevOps**: Flyway, Eureka, API Gateway  
 
 ---
 
 ## 🧑‍💻 Skills Demonstrated
 
-`Java · Spring Boot · Python · Redis · MSSQL · OAuth · JWT · Claude MCP · GenAI · LangChain · LangSmith · RAG · Flyway · Microservices · API Gateway · Eureka · Adapter Pattern · Low-Level Design · System Design`
+`Java · Spring Boot · Python · Redis · MSSQL · OAuth · JWT · Claude MCP · GenAI · LangChain · LangSmith · RAG · Flyway · Microservices · API Gateway · Eureka · Adapter Pattern · System Design · Low-Level Design`
 
 ---
+
